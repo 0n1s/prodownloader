@@ -9,6 +9,8 @@ import urllib2
 # pass your base url here
 url='http://dl.funsaber.net/serial/The%20Shannara%20Chronicles/season%202/480/'
 
+url= raw_input('Enter your url:')
+
 def print_time(threadName, full_link):
     command='axel -n 1000 -a '+ full_link + '| awk -W interactive' + "'$0~/\[/{printf'" + "%s'$'\r''"+ '", $0}"'
     p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
